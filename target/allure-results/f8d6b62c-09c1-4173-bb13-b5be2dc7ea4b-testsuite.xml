@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1537482114933" stop="1537482189290" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Default Suite : test_task_larnas</name>
+    <title>Default Suite : test_task_larnas</title>
+    <test-cases>
+        <test-case start="1537482121029" stop="1537482188526" status="passed">
+            <name>compareSSDNotebooks</name>
+            <steps/>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Default Suite"/>
+                <label name="testGroup" value="test_task_larnas"/>
+                <label name="testClass" value="com.framework.tests.comparison.CompareSSDLaptop"/>
+                <label name="testMethod" value="compareSSDNotebooks"/>
+                <label name="host" value="ser1k-ПК"/>
+                <label name="thread" value="7744@ser1k-ПК.main(1)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

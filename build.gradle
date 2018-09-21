@@ -1,0 +1,53 @@
+group '1'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+version = '1.0-SNAPSHOT'
+
+defaultTasks 'clean', 'test'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'io.rest-assured:rest-assured:3.0.3'
+    compile 'io.rest-assured:json-path:3.0.3'
+    compile 'org.seleniumhq.selenium:selenium-java:3.11.0'
+    compile "junit:junit:4.12"
+    compile "org.slf4j:slf4j-api:1.7.12"
+    compile "ch.qos.logback:logback-classic:1.1.3"
+    compile "ch.qos.logback:logback-core:1.1.3"
+    compile "org.seleniumhq.selenium:selenium-htmlunit-driver:2.52.0"
+    compile "javax.mail:mail:1.4.7"
+    compile 'commons-lang:commons-lang:2.6'
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile 'org.apache.httpcomponents:httpclient:4.5.2'
+    compile group: 'com.eclipsesource.minimal-json', name: 'minimal-json', version: '0.9.1'
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.7.2'
+    compile 'org.jsoup:jsoup:1.10.2'
+    compile 'org.glassfish:javax.json:1.0.4'
+    compile 'org.json:json:20170516'
+    compile group: 'ru.yandex.qatools.allure', name: 'allure-testng-adaptor', version: '1.5.4'
+    compile group: 'javax.ws.rs', name: 'javax.ws.rs-api', version: '2.0'
+    compile group: 'io.codearte.jfairy', name: 'jfairy', version: '0.5.9'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
+    testCompile group: 'org.testng', name: 'testng', version:'6.8.8'
+    testCompile fileTree('lib')
+}
+test {
+    useTestNG()
+    dependsOn cleanTest
+    systemProperty "serverChoose", findProperty("serverChoose")
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut"
+    }
+}
+
